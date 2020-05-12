@@ -1,0 +1,109 @@
+    <div class="row d-flex flex-row justify-content-center">
+        <h5 class="flex-grow-1 mb-4 ml-3 color-primary hc-title">{{ bs.title }}</h5>
+        
+        <!-- <div class="col-sm-12 col-md-6 col-lg-2">
+            <form>
+                <div class="form-group">
+                    <select class="form-control form-control-sm">
+                        <option ng-repeat="country in bs.countries">{{ country }}</option>
+                    </select>
+                </div>
+            </form>
+        </div> -->
+    </div>
+    <!-- <p>{{ bs.country }}</p> -->
+
+    <div class="row px-0 pt-2 mb-4 ">
+
+        <div class="col-sm-6 col-md-6 col-lg-3 mb-2">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body rounded bg-card-primary color-card-white">
+                    <h5 class="card-title font-weight-bolder">{{ bs.totalConfirmedCases }}
+                    </h5>
+                    <span
+                        class="font-weight-normal float-right rounded color-card-primary border-card border-card-color bg-card-primary-50 px-2">+{{  bs.totalNewConfirmedCases }}</span>
+
+                    <p class="card-text text-white font-weight-light">Cas confirmés</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-6 col-lg-3 mb-2">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body rounded bg-card-success color-card-white">
+                    <h5 class="card-title">{{ bs.totalRecoveredCases }}
+                    </h5>
+                    <span
+                        class="font-weight-normal float-right rounded color-card-success border-card border-card-color-success  bg-card-success-90 px-2">+{{ bs.totalNewRecoveredCases }}</span>
+                    <p class="card-text text-white font-weight-light text-capitalize">Guérisons</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-3 mb-2">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body rounded bg-card-warning color-card-white">
+                    <h5 class="card-title">{{ bs.totalActiveCases }}</h5>
+                    <p class="card-text text-white font-weight-light">Actifs</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-6 col-lg-3 mb-2">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body rounded bg-card-danger color-card-white">
+                    <h5 class="card-title">{{ bs.totalDeathCases }}
+                    </h5>
+                    <span
+                        class="font-weight-normal float-right rounded color-card-danger border-card border-card-color-danger  bg-card-danger-90 px-2">+{{  bs.totalNewDeathCases }}</span>
+                    <p class="card-text text-white font-weight-light text-capitalize">Décès</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <section class="wilaya row d-flex justify-content-center">
+        <div class="col">
+            <div class="row d-flex justify-content-between align-items-baseline">
+                <h6 class="pl-3 color-primary"> {{bs.titleState }} </h6>
+                <div class="col-sm-12 col-md-6 col-lg-5">
+                    <div class="mb-2 has-search">
+                        <span class="fa fa-search form-control-feedback fa-search"></span>
+                        <input type="text" class="form-control" ng-model="expression" placeholder="Chercher... ">
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-hover bg-transparent table-borderless wilaya">
+                <thead class="color-primary">
+                    <tr class="bg-card-primary-50 ">
+                        <th class="font-weight-normal">Wilayas</th>
+                        <th class="font-weight-normal">Guérisons</th>
+                        <th class="font-weight-normal">Morts</th>
+                        <th class="font-weight-normal" colspan="2">Confirmé</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="wilaya in bs.willayat | filter: expression | orderBy:'-deaths' track by $index">
+                        <a href="/#!/wilaya/{{ wilaya.code }}">
+                            <td><a href="/#!/wilaya/{{ wilaya.code }}" class="color-card-primary">{{ wilaya.name }}</a></td>
+                            <td>{{ wilaya.recovered }}</td>
+                            <td>{{ wilaya.deaths }}
+                                <span class="pl-1 pr-1 bg-card-danger-90">
+                                    +{{ wilaya.new_cases_death }}
+                                </span>
+                            </td>
+                            <td class="">
+                                {{ wilaya.confirmed }}
+                                <span class="pl-1 pr-1 bg-card-primary-50">
+                                    +{{ wilaya.new_cases }}
+                                </span>
+                            </td>
+                            <td><a href="/#!/wilaya/{{ wilaya.code }}" class="color-card-primary" title="Plus de details"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+                        </a>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="maison">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>COVID19 APP</title>
+
+    <!-- Fonts type -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-white mb-4">
+      <div class="container">
+        <a class="navbar-brand" href="/"><b>COVID-19</b></a>
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav ml-auto mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#!/about">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mb-4" style="min-height: 65vh;">
+      <div ng-view></div>
+    </div>
+
+    <footer id="footer" class="shadow-sm">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-start">
+          <div class="copyright">
+            <p class="mb-0">2020 &copy; All rights reserved</p>
+            <p>
+              Built by <a href="https://twitter.com/onisua">Anis Mula</a> using
+              <a href="https://covid19dz.openalgeria.org/api" target="_blank"
+                >Open Algeria API</a
+              >
+            </p>
+          </div>
+          <!-- resources -->
+          <div class="">
+            <p>
+              <a href="https://github.com/a4h8/covid19" target="_blank"
+                >GitHub Project</a
+              >
+              –
+              <a href="https://github.com/a4h8/covid19/issues" target="_blank"
+                >Issues</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Angular scripts -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+
+    <script src="main/main.js"></script>
+    <script src="main/stats/country/country.controller.js"></script>
+    <script src="main/stats/states/state.controller.js"></script>
+  </body>
+</html>

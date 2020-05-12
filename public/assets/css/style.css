@@ -1,0 +1,217 @@
+:root {
+  --bg-white: #fff;
+  --main-bg-color: #f0f2f5;
+  --main-color: #24323c;
+  --main-color-70: rgba(36, 50, 60, 0.7);
+
+  --card-bg-green-color: #67c23a;
+  --card-bg-green-color-90: #f3faef;
+  --card-bg-blue-color: #1989fa;
+  --bg-card-blue-color-50: #e6f1fc;
+  --card-bg-yellow-color: #e6a23c;
+  --card-bg-yellow-color-90: #fbf1e2;
+  --card-bg-red-color: #f56c6c;
+  --card-bg-red-color-90: #feebeb;
+
+  --card-green-color: #67c23a;
+  --card-green-color-90: #f3faef;
+  --card-blue-color: #1989fa;
+  --card-blue-color-50: #e6f1fc;
+  --card-yellow-color: #e6a23c;
+  --card-red-color: #f56c6c;
+  --card-red-color-90: #feebeb;
+  --card-white-color: #ffffff;
+  --card-white-color-70: #f2f6fc;
+
+  --card-border-blue-color: #a3d0fd;
+  --card-border-green-color: #cbebbb;
+  --card-border-red-color: #f9acac;
+}
+
+*,
+*:after,
+*:before,
+*:focus {
+  box-sizing: border-box;
+  outline-width: 0;
+  outline: none;
+}
+
+/* bootstrap resets */
+button:focus {
+  outline: none !important;
+}
+
+button.navbar-toggler.d-lg-none {
+  border-color: var(--card-border-blue-color);
+}
+button.navbar-toggler.d-lg-none:hover {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: var(--card-border-blue-color);
+}
+
+body {
+  background: var(--main-bg-color);
+  max-height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.bg-card-success {
+  background: var(--card-bg-green-color);
+}
+.bg-card-success-90 {
+  background: var(--card-bg-green-color-90);
+}
+.bg-card-primary {
+  background: var(--card-bg-blue-color);
+}
+.bg-card-primary-50 {
+  background: var(--bg-card-blue-color-50);
+}
+.bg-card-warning {
+  background: var(--card-bg-yellow-color);
+}
+.bg-card-warning-90 {
+  background: var(--card-bg-yellow-color-90);
+}
+.bg-card-danger {
+  background: var(--card-bg-red-color);
+}
+.bg-card-danger-90 {
+  background: var(--card-bg-red-color-90);
+}
+
+.color-card-success {
+  color: var(--card-green-color);
+}
+
+.color-card-success-90 {
+  color: var(--card-green-color-90);
+}
+
+.color-primary {
+  color: var(--main-color);
+}
+
+.color-card-primary {
+  color: var(--card-blue-color);
+}
+
+.color-card-warning {
+  color: var(--card-yellow-color);
+}
+.color-card-danger {
+  color: var(--card-red-color);
+}
+.color-card-danger-90 {
+  background: var(--card-red-color-90);
+}
+.color-card-white {
+  color: var(--card-white-color);
+}
+
+.color-card-white-70 {
+  color: var(--card-white-color-70);
+}
+
+.border-card-0 {
+  border: none;
+  border: 0;
+  border-width: 0;
+}
+.border-card {
+  border: 1px solid;
+}
+.border-card-w2 {
+  border-width: 2px;
+}
+.border-card-w3 {
+  border-width: 3px;
+}
+
+.border-card-color-primary {
+  border-color: var(--card-border-blue-color);
+}
+.border-card-color-success {
+  border-color: var(--card-border-green-color);
+}
+.border-card-color-danger {
+  border-color: var(--card-border-red-color);
+}
+
+/* Navbar */
+
+.nav-bg-white {
+  background: #f0f2f5 !important;
+}
+
+/* Cards section */
+
+.hc-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--main-color);
+}
+
+/* table section */
+.wilaya a {
+  color: var(--main-color);
+}
+
+.wilaya a:hover {
+  text-decoration: none;
+  color: var(--card-blue-color);
+}
+.table-hover tbody tr:hover {
+  transition: ease-in-out 300ms;
+  background: var(--bg-card-blue-color-50);
+  color: var(--main-color);
+}
+
+/* // search-input */
+.has-search .form-control {
+  padding-left: 2.375rem;
+  color: var(--main-color);
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+.form-control:focus {
+  outline: none;
+  outline-width: 0;
+  box-shadow: none !important;
+  border-color: var(--card-blue-color-50);
+}
+.form-control {
+  outline: none;
+  outline-width: 0;
+  box-shadow: none !important;
+  border-color: var(--bg-white);
+  background-color: var(--main-bg-color);
+}
+
+/* footer */
+#footer {
+  /* position: absolute; */
+  background: #f2f6fc;
+  width: 100%;
+  padding: 20px;
+  bottom: 0;
+}
+
+#footer p {
+  color: rgba(36, 50, 60, 0.7);
+}
+
+#footer p > a {
+  color: #456dfe;
+}

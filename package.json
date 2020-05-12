@@ -1,0 +1,31 @@
+{
+  "name": "covid-19",
+  "version": "1.0.2",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a4h8/covid19.git"
+  },
+  "author": "Anis Mula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a4h8/covid19/issues"
+  },
+  "homepage": "https://github.com/a4h8/covid19",
+  "dependencies": {
+    "angular": "^1.7.9",
+    "angular-route": "^1.7.9",
+    "express": "^4.17.1",
+    "jquery": "3.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "keywords": []
+}
