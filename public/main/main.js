@@ -14,13 +14,21 @@ function config($routeProvider) {
         templateUrl: 'main/stats/states/state.html',
         controller: WillayatController,
         controllerAs: 'bs'
+    })
+    .when('/about/', {
+        templateUrl: 'main/pages/about.html',
+        controller: PagesController,
+        controllerAs: 'bs'
     });
 }
 
 function MaController() {
-    var bs = this;
+   // var bs = this;
 }
 function WillayatController() {
-    var bs = this;
+   // var bs = this;
+}
+function PagesController() {
+   // var bs = this;
 }
 

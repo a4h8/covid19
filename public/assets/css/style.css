@@ -199,6 +199,12 @@ body {
   background-color: var(--main-bg-color);
 }
 
+/* // states sections */
+
+.capitalize {
+  text-transform: capitalize;
+}
+
 /* footer */
 #footer {
   /* position: absolute; */
