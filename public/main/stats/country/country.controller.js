@@ -1,7 +1,7 @@
 angular
   .module("maison")
   .controller("Macontroller", MaController)
-  .config(function($qProvider) {
+  .config(function ($qProvider) {
     // HTTP ERR handler message
     $qProvider.errorOnUnhandledRejections(false);
   });
@@ -16,7 +16,7 @@ function MaController($http) {
   //    https://disease.sh/v2/countries
   $http
     .get("https://covid19dz.openalgeria.org/api/v1/stats")
-    .then(function(response) {
+    .then(function (response) {
       // console.log(response);
       bs.status = response.status;
 
@@ -48,11 +48,11 @@ function MaController($http) {
   bs.titleState = "Tous les wilayas touchée ";
   $http
     .get("https://covid19dz.openalgeria.org/api/v1/wilayas")
-    .then(function(response) {
+    .then(function (response) {
       //bs.states = response.data;
       bs.willayat = response.data;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       //console.log(err);
       if (error.xhrStatus === "error") {
         bs.error = errorMessage;

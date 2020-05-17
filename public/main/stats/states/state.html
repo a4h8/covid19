@@ -1,10 +1,51 @@
 <div class="row">
   <div class="col">
     <h5>
-      Situation de covid-19 à
-      <span class="capitalize">{{bs.wilaya.name | lowercase }}</span>
+      Situation de Covid-19 à <span class="text-capitalize">{{bs.wilaya.name | lowercase }}</span>
     </h5>
-    <!-- {{ bs.id }} -->
+
+    <div class="row px-0 pt-2 mb-4">
+      <div class="col-sm-6 col-md-3 col-lg-3 mb-2">
+        <div class="card border shadow-none rounded-0">
+          <div class="card-body px-4 py-1">
+            <p class="card-text font-weight-normal pt-3 mb-2 text-uppercase">Confirmé</p>
+            <h5 class="card-title font-weight-normal mt-0">{{bs.confirmed}}
+              <span class="pl-1 pr-1 font-16 font-weight-normal bg-card-primary-50 text-secondary">+{{ bs.newCases }}
+              </span>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 col-lg-3 mb-2">
+        <div class="card border shadow-none rounded-0">
+          <div class="card-body px-4 py-1">
+            <p class="card-text font-weight-normal pt-3 mb-2 text-uppercase">Guérisons</p>
+            <h5 class="card-title font-weight-normal mt-0">{{bs.recovered}}
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 col-lg-3 mb-2">
+        <div class="card border shadow-none rounded-0">
+          <div class="card-body px-4 py-1">
+            <p class="card-text font-weight-normal pt-3 mb-2 text-uppercase">Décès</p>
+            <h5 class="card-title font-weight-normal mt-0">{{bs.deaths}}
+              <span
+                class="pl-1 pr-1 font-16 font-weight-normal bg-card-danger-90 text-secondary">+{{ bs.newDeathCases }}
+              </span>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 col-lg-3 mb-2">
+        <div class="card border shadow-none rounded-0">
+          <div class="card-body px-4 py-1">
+            <p class="card-text font-weight-normal pt-3 mb-2 text-uppercase">Actifs</p>
+            <h5 class="card-title font-weight-normal mt-0">{{bs.actives}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- <ul ng-repeat="age in bs.wilaya.ages">
             <li>

@@ -15,8 +15,8 @@ function config($routeProvider) {
         controller: WillayatController,
         controllerAs: 'bs'
     })
-    .when('/about/', {
-        templateUrl: 'main/pages/about.html',
+    .when('/about', {
+        templateUrl: 'main/pages/about/about.html',
         controller: PagesController,
         controllerAs: 'bs'
     });

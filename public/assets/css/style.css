@@ -201,8 +201,8 @@ body {
 
 /* // states sections */
 
-.capitalize {
-  text-transform: capitalize;
+.font-16 {
+  font-size: 16px;
 }
 
 /* footer */
