@@ -1,34 +1,38 @@
-angular.module("maison", ['ngRoute'])
-.controller('MaController', MaController)
-.config(config);
-
+angular
+  .module("maison", ["ngRoute"])
+  .controller("MaController", MaController)
+  .config(config);
 
 function config($routeProvider) {
-    $routeProvider
-    .when('/', {
-        templateUrl: 'main/stats/country/main.html',
-        controller: MaController,
-        controllerAs: 'bs'
+  $routeProvider
+    .when("/", {
+      templateUrl: "main/stats/country/main.html",
+      controller: MaController,
+      controllerAs: "bs",
     })
-    .when('/wilaya/:id', {
-        templateUrl: 'main/stats/states/state.html',
-        controller: WillayatController,
-        controllerAs: 'bs'
+    .when("/wilaya/:id", {
+      templateUrl: "main/stats/states/main.html",
+      controller: WillayatController,
+      controllerAs: "bs",
     })
-    .when('/about', {
-        templateUrl: 'main/pages/about/about.html',
-        controller: PagesController,
-        controllerAs: 'bs'
+    .when("/about", {
+      templateUrl: "main/pages/about/main.html",
+      controller: PagesController,
+      controllerAs: "bs",
+    })
+    .when("/faq", {
+      templateUrl: "main/pages/faq/main.html",
+      controller: PagesController,
+      controllerAs: "bs",
     });
 }
 
 function MaController() {
-   // var bs = this;
+  // var bs = this;
 }
 function WillayatController() {
-   // var bs = this;
+  // var bs = this;
 }
 function PagesController() {
-   // var bs = this;
+  // var bs = this;
 }
-

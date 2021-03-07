@@ -225,3 +225,8 @@ body {
 #footer p > a {
   color: #456dfe;
 }
+.loader {
+  margin: 3rem 0 auto;
+  display: flex;
+  justify-content: center;
+}
