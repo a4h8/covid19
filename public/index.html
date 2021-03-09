@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>COVID19 APP</title>
+    <title>COVID-19 DZ</title>
 
     <!-- Fonts type -->
     <link
@@ -25,7 +25,12 @@
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-white mb-4">
       <div class="container">
-        <a class="navbar-brand" href="/"><b>COVID-19</b></a>
+        <a
+          class="d-flex navbar-brand mx-0 align-items-center justify-content-between"
+          href="/"
+          ><b class="pr-2">COVID-19</b>
+          <span class="bg-primary text-white p-1">DZ</span></a
+        >
         <button
           class="navbar-toggler d-lg-none"
           type="button"
@@ -40,14 +45,17 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav ml-auto mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#!/about">About</a>
+              <a class="nav-link" href="#!/faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/about">À Propos</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container mb-4" style="min-height: 65vh;">
+    <div class="container mb-4" style="min-height: 65vh">
       <div ng-view></div>
     </div>
 
@@ -56,24 +64,16 @@
         <div class="d-flex justify-content-between align-items-start">
           <div class="copyright">
             <p class="mb-0">2020 &copy; All rights reserved</p>
-            <p>
-              Built by <a href="https://twitter.com/onisua">Anis Mula</a> using
-              <a href="https://covid19dz.openalgeria.org/api" target="_blank"
-                >Open Algeria API</a
-              >
-            </p>
+            <p>Built by <a href="https://github.com/a4h8">a4h8</a></p>
           </div>
           <!-- resources -->
-          <div class="">
-            <p>
-              <a href="https://github.com/a4h8/covid19" target="_blank"
-                >GitHub Project</a
-              >
-              –
-              <a href="https://github.com/a4h8/covid19/issues" target="_blank"
-                >Issues</a
-              >
-            </p>
+          <div class="d-flex flex-column">
+            <a href="https://github.com/a4h8/covid19" target="_blank"
+              >GitHub Project
+            </a>
+            <a href="https://github.com/a4h8/covid19/issues" target="_blank"
+              >Issues</a
+            >
           </div>
         </div>
       </div>

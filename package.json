@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -13,19 +12,19 @@
     "url": "https://github.com/a4h8/covid19.git"
   },
   "author": "Anis Mula",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/a4h8/covid19/issues"
   },
   "homepage": "https://github.com/a4h8/covid19",
   "dependencies": {
-    "angular": "^1.7.9",
-    "angular-route": "^1.7.9",
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
     "express": "^4.17.1",
     "jquery": "3.5.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.7"
   },
   "keywords": []
 }

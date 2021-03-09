@@ -1,27 +1,57 @@
-<div
-    class="toast"
-    ng-if="bs.error"
-    id="myToast"
-    style="position: fixed; bottom: 20px; left: 30px; z-index: 3;"
+<div ng-if="bs.loading === true" class="loader">
+  <!-- Source:  Github @SamHerbert -->
+  <svg
+    width="38"
+    height="38"
+    viewBox="0 0 38 38"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <div class="toast-header bg-card-danger">
-        <button type="button" class="ml-2 mb-1 text-white close" data-dismiss="toast">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="toast-body bg-card-danger color-card-white">
-      {{bs.error}}
-    </div>
-  </div>
-<script>
-$(document).ready(function () {
-    $(".toast").toast({ autohide: false });
-    $('.toast').toast('show');
-  });
-</script>
+    <defs>
+      <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
+        <stop stop-color="#456dfe" stop-opacity="0" offset="0%" />
+        <stop stop-color="#456dfe" stop-opacity=".631" offset="63.146%" />
+        <stop stop-color="#456dfe" offset="100%" />
+      </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+      <g transform="translate(1 1)">
+        <path
+          d="M36 18c0-9.94-8.06-18-18-18"
+          id="Oval-2"
+          stroke="url(#a)"
+          stroke-width="2"
+        >
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 18 18"
+            to="360 18 18"
+            dur="0.9s"
+            repeatCount="indefinite"
+          />
+        </path>
+        <circle fill="#456dfe" cx="36" cy="18" r="1">
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 18 18"
+            to="360 18 18"
+            dur="0.9s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </g>
+    </g>
+  </svg>
+</div>
+<div ng-if="bs.error" class="alert alert-danger" role="alert">
+  {{ bs.message }}
+</div>
 
-
-<div class="row d-flex flex-row justify-content-center">
+<div
+  ng-if="bs.error == false && bs.loading == false"
+  class="row d-flex flex-row justify-content-center"
+>
   <h5 class="flex-grow-1 mb-4 ml-3 color-primary hc-title">{{ bs.title }}</h5>
   <!-- <div class="col-sm-12 col-md-6 col-lg-2">
             <form>
@@ -35,7 +65,10 @@ $(document).ready(function () {
 </div>
 <!-- <p>{{ bs.country }}</p> -->
 
-<div class="row px-0 pt-2 mb-4 ">
+<div
+  ng-if="bs.error == false && bs.loading == false"
+  class="row px-0 pt-2 mb-4"
+>
   <div class="col-sm-6 col-md-6 col-lg-3 mb-2">
     <div class="card border-0 shadow-sm">
       <div class="card-body rounded bg-card-primary color-card-white">
@@ -57,7 +90,7 @@ $(document).ready(function () {
       <div class="card-body rounded bg-card-success color-card-white">
         <h5 class="card-title">{{ bs.totalRecoveredCases }}</h5>
         <span
-          class="font-weight-normal float-right rounded color-card-success border-card border-card-color-success  bg-card-success-90 px-2"
+          class="font-weight-normal float-right rounded color-card-success border-card border-card-color-success bg-card-success-90 px-2"
           >+{{ bs.totalNewRecoveredCases }}</span
         >
         <p class="card-text text-white font-weight-light text-capitalize">
@@ -70,17 +103,21 @@ $(document).ready(function () {
     <div class="card border-0 shadow-sm">
       <div class="card-body rounded bg-card-warning color-card-white">
         <h5 class="card-title">{{ bs.totalActiveCases }}</h5>
+        <span
+          class="font-weight-normal float-right rounded color-card-warning border-card border-card-color-warning bg-card-warning-90 px-2"
+          >+{{ bs.totalNewActiveCases }}</span
+        >
         <p class="card-text text-white font-weight-light">Actifs</p>
       </div>
     </div>
   </div>
 
-  <div class="col-sm-6 col-md-6 col-lg-3 mb-2">
+  <div class="col-sm-6 col-md-6 col-lg-3">
     <div class="card border-0 shadow-sm">
       <div class="card-body rounded bg-card-danger color-card-white">
         <h5 class="card-title">{{ bs.totalDeathCases }}</h5>
         <span
-          class="font-weight-normal float-right rounded color-card-danger border-card border-card-color-danger  bg-card-danger-90 px-2"
+          class="font-weight-normal float-right rounded color-card-danger border-card border-card-color-danger bg-card-danger-90 px-2"
           >+{{ bs.totalNewDeathCases }}</span
         >
         <p class="card-text text-white font-weight-light text-capitalize">
@@ -89,9 +126,17 @@ $(document).ready(function () {
       </div>
     </div>
   </div>
+
+  <span class="my-4 ml-3"
+    >Dernière mise à jour :
+    <strong class="text-capitalize">{{ bs.lastUpdateDate }}</strong>
+  </span>
 </div>
 
-<section class="wilaya row d-flex justify-content-center">
+<section
+  ng-if="bs.error == false && bs.loading == false "
+  class="wilaya row d-flex justify-content-center"
+>
   <div class="col">
     <div class="row d-flex justify-content-between align-items-baseline">
       <h6 class="pl-3 color-primary">{{bs.titleState }}</h6>
@@ -110,39 +155,39 @@ $(document).ready(function () {
 
     <table class="table table-hover bg-transparent table-borderless wilaya">
       <thead class="color-primary">
-        <tr class="bg-card-primary-50 ">
+        <tr class="bg-card-primary-50">
           <th class="font-weight-normal">Wilayas</th>
           <th class="font-weight-normal">Guérisons</th>
           <th class="font-weight-normal">Morts</th>
           <th class="font-weight-normal" colspan="2">Confirmé</th>
         </tr>
       </thead>
-      <tbody>
-        <tr
-          ng-repeat="wilaya in bs.willayat | filter: expression | orderBy:'-deaths' track by $index"
-        >
-          <a href="/#!/wilaya/{{ wilaya.code }}">
+      <tbody ng-if="bs.loadingWilaya == false">
+        <tr ng-repeat="(key, wilaya) in bs.willayat | filter: expression">
+          <a href="/#!/wilaya/{{ key }} ">
             <td>
-              <a href="/#!/wilaya/{{ wilaya.code }}" class="color-card-primary text-capitalize"
-                >{{ wilaya.name | lowercase }}</a
-              >
+              <a
+                href="/#!/wilaya/{{ key }}"
+                class="color-card-primary text-capitalize"
+                >{{ wilaya.name | lowercase }}
+              </a>
             </td>
             <td>{{ wilaya.recovered }}</td>
             <td>
               {{ wilaya.deaths }}
-              <span class="pl-1 pr-1 bg-card-danger-90">
+              <!-- <span class="pl-1 pr-1 bg-card-danger-90">
                 +{{ wilaya.new_cases_death }}
-              </span>
+              </span> -->
             </td>
             <td class="">
-              {{ wilaya.confirmed }}
-              <span class="pl-1 pr-1 bg-card-primary-50">
+              {{ wilaya.cases }}
+              <!-- <span class="pl-1 pr-1 bg-card-primary-50">
                 +{{ wilaya.new_cases }}
-              </span>
+              </span> -->
             </td>
             <td>
               <a
-                href="/#!/wilaya/{{ wilaya.code }}"
+                href="/#!/wilaya/{{ key }}"
                 class="color-card-primary"
                 title="Plus de details"
                 ><i class="fa fa-info-circle" aria-hidden="true"></i
@@ -152,5 +197,64 @@ $(document).ready(function () {
         </tr>
       </tbody>
     </table>
+    <div ng-if="bs.loadingWilaya == true">
+      <svg
+        role="img"
+        width="100%"
+        height="400px"
+        aria-labelledby="loading-aria"
+        viewBox="0 0 400 160"
+        preserveAspectRatio="none"
+      >
+        <title id="loading-aria">Loading...</title>
+        <rect
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          clip-path="url(#clip-path)"
+          style="fill: url('#fill')"
+        ></rect>
+        <defs>
+          <clipPath id="clip-path">
+            <rect x="0" y="57" rx="3" ry="3" width="410" height="6" />
+            <rect x="0" y="73" rx="3" ry="3" width="380" height="6" />
+            <rect x="1" y="29" rx="3" ry="3" width="401" height="14" />
+            <rect x="0" y="90" rx="3" ry="3" width="380" height="6" />
+            <rect x="2" y="105" rx="3" ry="3" width="380" height="6" />
+            <rect x="3" y="120" rx="3" ry="3" width="380" height="6" />
+          </clipPath>
+          <linearGradient id="fill">
+            <stop offset="0.599964" stop-color="#f3f3f3" stop-opacity="1">
+              <animate
+                attributeName="offset"
+                values="-2; -2; 1"
+                keyTimes="0; 0.25; 1"
+                dur="2s"
+                repeatCount="indefinite"
+              ></animate>
+            </stop>
+            <stop offset="1.59996" stop-color="#ecebeb" stop-opacity="1">
+              <animate
+                attributeName="offset"
+                values="-1; -1; 2"
+                keyTimes="0; 0.25; 1"
+                dur="2s"
+                repeatCount="indefinite"
+              ></animate>
+            </stop>
+            <stop offset="2.59996" stop-color="#f3f3f3" stop-opacity="1">
+              <animate
+                attributeName="offset"
+                values="0; 0; 3"
+                keyTimes="0; 0.25; 1"
+                dur="2s"
+                repeatCount="indefinite"
+              ></animate>
+            </stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
   </div>
 </section>

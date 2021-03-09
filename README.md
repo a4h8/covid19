@@ -2,9 +2,7 @@
 
 **Live Demo**: https://covid19dz.glitch.me
 
-
-Getting Started
----------------
+## Getting Started
 
 To get started clone the repository
 
@@ -23,14 +21,10 @@ node app.js or npm start
 
 ```
 
+## Resources
 
-Resources
----------
-
-[COVID-19 API](https://covid19dz.openalgeria.org/api) - An Open Algeria COVID-19 API
-
-
-
+[COVID-19 API](https://covid19-api-algeria.herokuapp.com)
 
 ### About the author
+
 You can follow [@anis](https://twitter.com/onisua) on Twitter or [a4h8](https://github.com/a4h8/) on Github

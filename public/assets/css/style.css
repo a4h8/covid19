@@ -145,6 +145,10 @@ body {
   background: #f0f2f5 !important;
 }
 
+.navbar-brand > span {
+  font-size: 12px;
+}
+
 /* Cards section */
 
 .hc-title {
@@ -220,4 +224,9 @@ body {
 
 #footer p > a {
   color: #456dfe;
+}
+.loader {
+  margin: 3rem 0 auto;
+  display: flex;
+  justify-content: center;
 }
