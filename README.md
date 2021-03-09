@@ -23,7 +23,7 @@ node app.js or npm start
 
 ## Resources
 
-[COVID-19 API](https://covid19dz.openalgeria.org/api) - An Open Algeria COVID-19 API
+[COVID-19 API](https://covid19-api-algeria.herokuapp.com)
 
 ### About the author
 
